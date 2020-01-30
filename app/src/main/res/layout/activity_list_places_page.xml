@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--FARUKH HALEEM 16648-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".listPlacesPage">
+
+    <!--the page title-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="399dp"
+        android:layout_height="64dp"
+        android:text="List Places"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <!--list stations button-->
+    <Button
+        android:id="@+id/listStations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="10dp"
+        android:text="List Stations" />
+
+    <!--this scroll view will scroll the data from api call-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listStations"
+        android:layout_above="@+id/listNav"
+        >
+
+        <!--this text view will contain the station data from jcdecaux-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/apiData"
+        android:padding="5dp"
+        android:textSize="24sp"
+        android:hint="Stations go here"
+        />
+
+    </ScrollView>
+
+
+    <!--bottom navigation-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:id="@+id/listNav"
+        >
+
+        <!--home button-->
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="switchToHomePage"
+            android:text="Home"
+            tools:text="Home" />
+
+        <!--list page button-->
+        <Button
+            android:id="@+id/listPageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="switchToListPage"
+            android:text="List Page"
+            tools:text="List Page" />
+
+        <!--recycler list button-->
+        <Button
+            android:id="@+id/recyclerListButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="switchToListRecyclePage"
+            android:text="Recycler List"
+            tools:text="Recycler List" />
+
+        <!--map button-->
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="switchToMapPage"
+            android:text="Map"
+            tools:text="Map" />
+    </LinearLayout>
+</RelativeLayout>
